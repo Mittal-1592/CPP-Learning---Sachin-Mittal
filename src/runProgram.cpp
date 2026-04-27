@@ -67,7 +67,7 @@ void runProgram(){
         
     deleteMatrix(matrix1,row1);
     deleteMatrix(matrix2,row2);
-    break;
+    
     }
 }
         
