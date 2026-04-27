@@ -67,7 +67,14 @@ void runProgram(){
         
     deleteMatrix(matrix1,row1);
     deleteMatrix(matrix2,row2);
-    
+
+    int wantToExit;
+    cout << endl << "Enter 0 to stop : " << endl;
+    wantToExit = validateInteger();
+
+    if(wantToExit == 0){
+        break;
+    }
     }
 }
         
