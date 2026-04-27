@@ -1,0 +1,12 @@
+types of header guards !
+more preprocessor (.i mean)
+
+why do we really need header files
+namespaces ?
+
+why we are using using namespaces std?
+
+can we deference int value.
+void pointer
+
+dynamic memory allocation
