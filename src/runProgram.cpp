@@ -1,8 +1,8 @@
 #include <iostream>
-#include "../inc/validations.h"
-#include "../inc/matrix.h"
-#include "../inc/matrixAddition.h"
-#include "../inc/matrixMultiplication.h"
+#include "validations.h"
+#include "matrix.h"
+#include "matrixAddition.h"
+#include "matrixMultiplication.h"
 using namespace std;
 
 void runProgram(){

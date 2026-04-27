@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../inc/validations.h"
+#include "validations.h"
 using namespace std;
 
 int** createMatrix(int rows, int columns){

@@ -1,6 +1,6 @@
-#include "../inc/matrixAddition.h"
-#include "../inc/matrix.h"
-#include<iostream>
+#include "matrixAddition.h"
+#include "matrix.h"
+#include <iostream>
 using namespace std;
 
 void matrixAddition(int **matrix1, int ** matrix2, int** sum, int row1, int col1, int row2, int col2){

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../inc/matrixMultiplication.h"
-#include "../inc/matrix.h"
+#include "matrixMultiplication.h"
+#include "matrix.h"
 using namespace std;
 
 

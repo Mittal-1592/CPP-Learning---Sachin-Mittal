@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../inc/runProgram.h"
-#include "../inc/matrixAddition.h"
-#include "../inc/matrix.h"
+#include "runProgram.h"
+#include "matrixAddition.h"
+#include "matrix.h"
 using namespace std;
 
 bool isValidInteger(string &input){

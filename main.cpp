@@ -1,4 +1,4 @@
-#include "inc/runProgram.h"
+#include "runProgram.h"
 #include <iostream>
 using namespace std;
 
