@@ -11,8 +11,8 @@ private:
 public:
     AccountHolder(int id, int acc);
 
-    void deposit(Bank& bank, double amt, const std::string& date);
-    void withdraw(Bank& bank, double amt, const std::string& date);
+    void deposit(Bank& bank, double amt, std::string& date);
+    void withdraw(Bank& bank, double amt, std::string& date);
     void miniStatement(Bank& bank);
     void fullStatement(Bank& bank);
 };

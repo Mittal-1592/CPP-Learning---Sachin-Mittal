@@ -27,7 +27,7 @@ void Account::resize() {
 int Account::getAccNo() { return accNo; }
 double Account::getBalance() { return balance; }
 
-void Account::deposit(double amt, const std::string date) {
+void Account::deposit(double amt, std::string date) {
     if (txnCount == txnCapacity) {
         resize();
     }
@@ -36,7 +36,7 @@ void Account::deposit(double amt, const std::string date) {
     std::cout << std::endl << "Deposit successful. Balance: " << balance << std::endl;
 }
 
-bool Account::withdraw(double amt, const std::string date) {
+bool Account::withdraw(double amt, std::string date) {
     if (amt > balance){
         std::cout << "Insufficient funds. Current balance: " << balance << std::endl;
         return false;

@@ -7,7 +7,7 @@ AccountHolder::AccountHolder(int id,
 
 void AccountHolder::deposit(Bank& bank,
                             double amt,
-                            const std::string& date) {
+                            std::string& date) {
     Account* acc = bank.getAccount(accNo);
     if (acc)
         acc->deposit(amt, date);
@@ -15,7 +15,7 @@ void AccountHolder::deposit(Bank& bank,
 
 void AccountHolder::withdraw(Bank& bank,
                              double amt,
-                             const std::string& date) {
+                             std::string& date) {
     Account* acc = bank.getAccount(accNo);
     if (acc)
         acc->withdraw(amt, date);
