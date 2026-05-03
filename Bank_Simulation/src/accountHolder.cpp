@@ -1,0 +1,34 @@
+#include "accountHolder.h"
+#include <iostream>
+
+AccountHolder::AccountHolder(int id,
+                             int acc)
+    : User(id), accNo(acc) {}
+
+void AccountHolder::deposit(Bank& bank,
+                            double amt,
+                            const std::string& date) {
+    Account* acc = bank.getAccount(accNo);
+    if (acc)
+        acc->deposit(amt, date);
+}
+
+void AccountHolder::withdraw(Bank& bank,
+                             double amt,
+                             const std::string& date) {
+    Account* acc = bank.getAccount(accNo);
+    if (acc)
+        acc->withdraw(amt, date);
+}
+
+void AccountHolder::miniStatement(Bank& bank) {
+    Account* acc = bank.getAccount(accNo);
+    if (acc)
+        acc->miniStatement();
+}
+
+void AccountHolder::fullStatement(Bank& bank) {
+    Account* acc = bank.getAccount(accNo);
+    if (acc)
+        acc->fullStatement();
+}
