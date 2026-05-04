@@ -31,3 +31,11 @@ void Admin::fullStatement(Bank& bank, int accNo) {
     if(!acc)
         std::cout << std::endl << "--------------- Account not Found ---------------" << std::endl;
 }
+
+void Admin::getBalance(Bank& bank, int accNo) {
+    Account* acc = bank.getAccount(accNo);
+    if (acc)
+        std::cout << "Current Balance: " << acc->getBalance() << std::endl;
+    if(!acc)
+        std::cout << std::endl << "--------------- Account not Found ---------------" << std::endl;
+}

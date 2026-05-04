@@ -28,9 +28,10 @@ void runProgram() {
                 std::cout << "2. Close Account" << std::endl;
                 std::cout << "3. Mini Statement" << std::endl;
                 std::cout << "4. Full Statement" << std::endl;
-                std::cout << "5. Back to Main Menu" << std::endl;
+                std::cout << "5. Get Balance" << std::endl;
+                std::cout << "6. Back to Main Menu" << std::endl;
                 std::cout << "Enter choice: ";
-                adminChoice = validChoice(1, 5);
+                adminChoice = validChoice(1, 6);
 
                 if (adminChoice == 1) {
                     int accNo;
@@ -57,6 +58,12 @@ void runProgram() {
                     admin.fullStatement(bank, accNo);
                 }
                 else if (adminChoice == 5) {
+                    int accNo;
+                    std::cout << "Enter Account Number: ";
+                    accNo = validAccountNumber();
+                    admin.getBalance(bank, accNo);
+                }
+                else if (adminChoice == 6) {
                     break;
                 }
             }
@@ -85,9 +92,10 @@ void runProgram() {
                 std::cout << "2. Withdraw" << std::endl;
                 std::cout << "3. Mini Statement" << std::endl;
                 std::cout << "4. Full Statement" << std::endl;
-                std::cout << "5. Back to Main Menu" << std::endl;
+                std::cout << "5. Get Balance" << std::endl;
+                std::cout << "6. Back to Main Menu" << std::endl;
                 std::cout << "Enter choice: ";
-                userChoice = validChoice(1, 5);
+                userChoice = validChoice(1, 6);
 
                 if (userChoice == 1) {
                     double amt;
@@ -118,6 +126,9 @@ void runProgram() {
                     user.fullStatement(bank);
                 }
                 else if (userChoice == 5) {
+                    user.getBalance(bank);
+                }
+                else if (userChoice == 6) {
                     break;
                 }
             }

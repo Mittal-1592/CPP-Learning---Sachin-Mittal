@@ -7,7 +7,7 @@ protected:
 
 public:
     User(int id);
-   ~User() {}
+   
 };
 
 #endif

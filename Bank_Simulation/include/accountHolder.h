@@ -15,6 +15,8 @@ public:
     void withdraw(Bank& bank, double amt, std::string& date);
     void miniStatement(Bank& bank);
     void fullStatement(Bank& bank);
+
+    void getBalance(Bank& bank);
 };
 
 #endif

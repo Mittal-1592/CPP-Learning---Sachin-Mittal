@@ -12,6 +12,8 @@ public:
 
     void miniStatement(Bank& bank, int accNo);
     void fullStatement(Bank& bank, int accNo);
+
+    void getBalance(Bank& bank, int accNo);
 };
 
 #endif

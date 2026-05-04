@@ -32,3 +32,9 @@ void AccountHolder::fullStatement(Bank& bank) {
     if (acc)
         acc->fullStatement();
 }
+
+void AccountHolder::getBalance(Bank& bank) {
+    Account* acc = bank.getAccount(accNo);
+    if (acc)
+        std::cout << "Current Balance: " << acc->getBalance() << std::endl;
+}
