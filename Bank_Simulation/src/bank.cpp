@@ -48,6 +48,7 @@ bool Bank::removeAccount(int accNo) {
         if (accounts[i]->getAccNo() == accNo) {
             delete accounts[i];
             accounts[i] = accounts[count - 1];
+            accounts[count - 1] = nullptr;
             count--;
             return true;
         }

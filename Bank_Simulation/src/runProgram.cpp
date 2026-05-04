@@ -97,8 +97,7 @@ void runProgram() {
                     amt = validAmount();
 
                     std::cout << "Enter date: ";
-                  //  date = getValidDate();  // assuming your validation function
-                    std::cin >> date;
+                    date = validDate();
                     user.deposit(bank, amt, date);
                 }
                 else if (userChoice == 2) {
@@ -108,9 +107,8 @@ void runProgram() {
                     std::cout << "Enter amount: ";
                     amt = validAmount();
 
-                    // std::cout << "Enter date: ";
-                    // date = getValidDate();
-                    std::cin >> date;
+                    std::cout << "Enter date: ";
+                    date = validDate();
                     user.withdraw(bank, amt, date);
                 }
                 else if (userChoice == 3) {
