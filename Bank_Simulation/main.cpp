@@ -1,11 +1,12 @@
-#include "bank.h"
-#include "admin.h"
-#include "accountHolder.h"
-#include "runProgram.h"
+#include "Bank.h"
+#include "AuthManager.h"
+#include "Admin.h"
+#include "runSimulation.h"
 
 int main() {
-    runProgram();
-    return 0;
-}
+    Bank bank;
+    Admin admin("admin", "Admin123");
+    AuthManager authManager(&admin);
 
-   
+    runSimulation(bank, authManager);
+}
