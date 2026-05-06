@@ -48,9 +48,16 @@ void Bank::createAccount(std::string userName, std::string password) {
 bool Bank::closeAccount(int accNo) {
     for (int i = 0; i < accCount; i++) {
         if (accounts[i]->getAccountNumber() == accNo) {
+            std::cout << accounts[i]->getAccountNumber() << " " << users[i]->getUserName() << std::endl;
             delete accounts[i];
+            delete users[i];
+
             accounts[i] = accounts[accCount - 1];
+            users[i] = users[userCount - 1];
+
             accCount--;
+            userCount--;
+
             std::cout << "Account closed successfully." << std::endl;
             return true;
         }
@@ -68,8 +75,11 @@ Account* Bank::getAccount(int accNo) {
 
 AccountHolder* Bank::loginUser(std::string userName, std::string password) {
     for (int i = 0; i < userCount; i++)
-        if (users[i]->login(userName, password))
+        if (users[i]->login(userName, password)){
+            std::cout << "Login successful for user: " << users[i]->getUserName() << std::endl;
             return users[i];
+        }
+            
     return nullptr;
 }
 

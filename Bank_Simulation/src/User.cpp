@@ -1,8 +1,8 @@
 #include "User.h"
 
-User::User(std::string u, std::string p)
-    : userName(u), password(p) {}
+User::User(std::string userName, std::string password)
+    : userName(userName), password(password) {}
 
-bool User::login(std::string u, std::string p) {
-    return userName == u && password == p;
+bool User::login(std::string userName, std::string password) {
+    return this->userName == userName && this->password == password;
 }
