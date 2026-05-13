@@ -23,7 +23,5 @@ Song* SongLibrary::getSong(std::string title) const {
 }
 
 SongLibrary::~SongLibrary() {
-    // for (auto song : songs) {
-    //  delete song;
-    // }
+
 }

@@ -7,5 +7,7 @@ class Validations {
     public:
         int isValidChoice(int min, int max);
         int isPositionValid(int size);
+        bool validatePlaylistName(const std::string& playlistName);
+        std::string getValidPlaylistName();
 };
 #endif

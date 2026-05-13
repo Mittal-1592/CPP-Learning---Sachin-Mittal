@@ -9,7 +9,7 @@ class IPlaylistManager {
     public:
         virtual void createPlaylist(const std::string& name) = 0;
         virtual void removePlaylist(const std::string& name) = 0;
-        virtual void showAllPlaylists() = 0;
+        virtual bool showAllPlaylists() = 0;
         virtual void addSongToPlaylist(const std::string& playlistName, Song* song) = 0;
         virtual void removeSong(const std::string& songTitle) = 0;
         virtual void moveSongUp(const std::string& playlistName, const std::string& songTitle, int position) = 0;

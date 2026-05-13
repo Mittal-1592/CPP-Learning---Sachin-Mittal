@@ -16,7 +16,7 @@ private:
     std::string currentPlaylist;
 
 public:
-    MusicPlayerController(IMusicPlayer* p, IPlaylistManager* m, SongLibrary& lib);
+    MusicPlayerController(IMusicPlayer* player, IPlaylistManager* manager, SongLibrary& library);
     void run();
 };
 #endif

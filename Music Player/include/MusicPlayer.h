@@ -22,7 +22,6 @@ public:
     void next() override;
     void previous() override;
     void setPlaylist(Playlist* playlist) override;
-
     ~MusicPlayer() = default;
 };
 

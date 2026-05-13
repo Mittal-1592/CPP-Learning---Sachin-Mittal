@@ -32,10 +32,6 @@ void Playlist::removeSong(const std::string& title) {
 }
 
 void Playlist::moveSongUp(const std::string& songTitle, int position) {
-    if(position == 1){
-        std::cout<< "Song is already at the top of the playlist."<< std::endl;
-        return;
-    }
     for (int i = 1; i < songs.size(); i++) {
         if (songs[i]->getTitle() == songTitle) {
             if (i <= position) {
@@ -46,6 +42,7 @@ void Playlist::moveSongUp(const std::string& songTitle, int position) {
                 std::swap(songs[i], songs[i - 1]);
                 i--;
             }
+            std::cout << "Song moved up in the playlist: " << songTitle << std::endl;
             return;
         }
     }
@@ -63,6 +60,7 @@ void Playlist::moveSongDown(const std::string& songTitle, int position) {
                 std::swap(songs[i], songs[i + 1]);
                 i++;
             }
+            std::cout << "Song moved down in the playlist: " << songTitle << std::endl;
             return;
         }
     }
@@ -71,9 +69,9 @@ void Playlist::moveSongDown(const std::string& songTitle, int position) {
 
 void Playlist::display() const {
     std::cout << "Playlist: " << name << std::endl;
-
+    int index = 1;
     for (auto song : songs) {
-        std::cout << "- " << song->getTitle() << std::endl;
+        std::cout << index++ << ". " << song->getTitle() << std::endl;
     }
 }
 

@@ -30,12 +30,19 @@ void PlaylistManager::removePlaylist(const std::string& name) {
     std::cout << "Playlist not found!" << std::endl;
 }
 
-void PlaylistManager::showAllPlaylists(){
+bool PlaylistManager::showAllPlaylists(){
+    if(playlists.empty()) {
+        std::cout << "No playlists available." << std::endl;
+        return false;
+    }
     std::cout << "Available Playlists:" << std::endl;
+    int index = 1;
     for (auto& playlist : playlists) {
-        std::cout << "- " << playlist.first << std::endl;
+        std::cout << index << ". " << playlist.first << std::endl;
+        index++;
     }
     std::cout << std::endl;
+    return true;
 }
 
 void PlaylistManager::addSongToPlaylist(const std::string& playlistName, Song* song) {

@@ -30,17 +30,17 @@ void MusicPlayerController::run() {
         if (choice == 1) {
             std::string playlistName;
             std::cout << "Enter playlist name: ";
-            std::getline(std::cin, playlistName);
-
+            playlistName = validations.getValidPlaylistName();
             manager->createPlaylist(playlistName);
         }
 
         else if (choice == 2) {
             std::string playlistName;
-            manager->showAllPlaylists();
+            if (!manager->showAllPlaylists()) {
+                continue;
+            }
             std::cout << "Enter playlist name to remove: ";
-            std::getline(std::cin, playlistName);
-
+            playlistName = validations.getValidPlaylistName();
             manager->removePlaylist(playlistName);
         }
 
@@ -50,9 +50,11 @@ void MusicPlayerController::run() {
 
         else if (choice == 4) {
             std::string playlistName;
-            manager->showAllPlaylists();
+            if (!manager->showAllPlaylists()) {
+                continue;
+            }
             std::cout << "Enter playlist name to open: ";
-            std::getline(std::cin, playlistName);
+            playlistName = validations.getValidPlaylistName();
 
             Playlist* playlist = manager->getPlaylist(playlistName);
 
@@ -83,6 +85,7 @@ void MusicPlayerController::run() {
                 playlistChoice = validations.isValidChoice(1, 11);
                 
                 if (playlistChoice == 1) {
+                    std::cout << std::endl;
                     library.displaySongs();
                     std::string songTitle;
                     std::cout << "Select song title: ";
@@ -100,6 +103,10 @@ void MusicPlayerController::run() {
 
                 else if (playlistChoice == 2) {
                     manager->displayPlaylist(playlistName);
+                    if(playlist->getSongs().size() == 0) {
+                        std::cout << "Playlist is empty. No songs to remove." << std::endl;
+                        continue;
+                    }
                     std::string title;
                     std::cout << "Enter song title to remove: ";
                     std::getline(std::cin, title);
@@ -109,6 +116,10 @@ void MusicPlayerController::run() {
 
                 else if (playlistChoice == 3) {
                     std::string title;
+                    if(playlist->getSongs().size() == 0) {
+                        std::cout << "Playlist is empty. No songs to move." << std::endl;
+                        continue;
+                    }
                     std::cout << "Enter song title: ";
                     std::getline(std::cin, title);
                     int position;  
@@ -119,6 +130,10 @@ void MusicPlayerController::run() {
 
                 else if (playlistChoice == 4) {
                     std::string title;
+                    if(playlist->getSongs().size() == 0) {
+                        std::cout << "Playlist is empty. No songs to move." << std::endl;
+                        continue;
+                    }
                     std::cout << "Enter song title: ";
                     std::getline(std::cin, title);
                     int position;
@@ -181,7 +196,7 @@ void MusicPlayerController::run() {
         }
 
         else if (choice == 5) {
-            std::cout << "Exiting..."<< std::endl;
+            std::cout << "Application closed !! "<< std::endl;
             break;
         }
         else {

@@ -5,7 +5,7 @@
 #include <string>
 #include <sstream>
 
-int Validations::isValidChoice(int min, int max) {
+int Validations::isValidChoice(int minimum, int maximum) {
     std::string input;
     int choice;
 
@@ -25,8 +25,8 @@ int Validations::isValidChoice(int min, int max) {
             continue;
         }
 
-        if (choice < min || choice > max) {
-            std::cout<< "Invalid choice. Please enter a number between "<< min<< " and "<< max<< ".\n";
+        if (choice < minimum || choice > maximum) {
+            std::cout<< "Invalid choice. Please enter a number between "<< minimum<< " and "<< maximum<< ".\n";
             continue;
         }
         return choice;
@@ -57,5 +57,47 @@ int Validations::isPositionValid(int size) {
             continue;
         }
         return position - 1;
+    }
+}
+
+bool Validations::validatePlaylistName(const std::string& playlistName) {
+    if (playlistName.empty()) {
+        return false;
+    }
+
+    bool onlySpaces = true;
+
+    for (char ch : playlistName) {
+        if (ch != ' ') {
+            onlySpaces = false;
+            break;
+        }
+    }
+
+    if (onlySpaces) {
+        return false;
+    }
+
+    for (char ch : playlistName) {
+        if (!(isalnum(ch) || ch == ' ' || ch == '_' || ch == '-')) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+std::string Validations::getValidPlaylistName() {
+    std::string playlistName;
+    while (true) {
+        std::cout<< "working fine till here 1"<< std::endl;
+        std::getline(std::cin, playlistName);
+        std::cout<< "working fine till here 2"<< std::endl;
+        if (Validations::validatePlaylistName(playlistName)) {
+            std::cout<< "working fine till here 3"<< std::endl;
+            return playlistName;
+        }
+        std::cout << "Invalid playlist name. Try again." << std::endl;
     }
 }
