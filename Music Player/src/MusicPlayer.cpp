@@ -46,4 +46,3 @@ void MusicPlayer::setPlaylist(Playlist* playlist) {
     this->playlist = playlist;
     currentIndex = 0;
 }
-

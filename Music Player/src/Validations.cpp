@@ -91,11 +91,8 @@ bool Validations::validatePlaylistName(const std::string& playlistName) {
 std::string Validations::getValidPlaylistName() {
     std::string playlistName;
     while (true) {
-        std::cout<< "working fine till here 1"<< std::endl;
         std::getline(std::cin, playlistName);
-        std::cout<< "working fine till here 2"<< std::endl;
         if (Validations::validatePlaylistName(playlistName)) {
-            std::cout<< "working fine till here 3"<< std::endl;
             return playlistName;
         }
         std::cout << "Invalid playlist name. Try again." << std::endl;
