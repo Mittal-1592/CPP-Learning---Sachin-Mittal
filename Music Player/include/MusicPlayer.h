@@ -16,12 +16,12 @@ private:
 public:
     MusicPlayer();
 
-    void play() override;
-    void pause() override;
-    void stop() override;
-    void next() override;
-    void previous() override;
-    void setPlaylist(Playlist* playlist) override;
+    bool play() override;
+    bool pause() override;
+    bool stop() override;
+    bool next() override;
+    bool previous() override;
+    bool setPlaylist(Playlist* playlist) override;
     ~MusicPlayer() = default;
 };
 

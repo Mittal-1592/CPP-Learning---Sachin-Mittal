@@ -14,13 +14,13 @@ public:
     Playlist();
     Playlist(const std::string& name);
 
-    void addSong(Song* song);
-    void removeSong(const std::string& songTitle);
+    bool addSong(Song* song);
+    bool removeSong(const std::string& songTitle);
 
-    void moveSongUp(const std::string& songTitle, int position);
-    void moveSongDown(const std::string& songTitle, int position);
+    bool moveSongUp(const std::string& songTitle, int position);
+    bool moveSongDown(const std::string& songTitle, int position);
 
-    void display() const;
+    bool display() const;
 
     std::vector<Song*> getSongs() const;
     std::string getName() const;

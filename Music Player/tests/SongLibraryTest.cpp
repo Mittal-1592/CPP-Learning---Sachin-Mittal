@@ -15,12 +15,12 @@ protected:
     }
 };
 
-TEST_F(SongLibraryTest, AddSongStoresSongCorrectly) {
+TEST_F(SongLibraryTest, WhenSongIsAdded_ThenItIsStoredCorrectlyInLibrary) {
     EXPECT_EQ(library.getSong("Breeze Air"), song1);
     EXPECT_EQ(library.getSong("Broom Game"), song2);
 }
 
-TEST_F(SongLibraryTest, GetSongReturnsCorrectSong) {
+TEST_F(SongLibraryTest, WhenGetSongIsCalledWithValidTitle_ThenCorrectSongIsReturned) {
     Song* result = library.getSong("Breeze Air");
 
     ASSERT_NE(result, nullptr);
@@ -28,11 +28,11 @@ TEST_F(SongLibraryTest, GetSongReturnsCorrectSong) {
     EXPECT_EQ(result->getFilePath(), "/songs/Breeze Air.wav");
 }
 
-TEST_F(SongLibraryTest, GetSongReturnsNullptrForInvalidSong) {
+TEST_F(SongLibraryTest, WhenGetSongIsCalledWithInvalidTitle_ThenReturnsNullptr) {
     EXPECT_EQ(library.getSong("Unknown Song"), nullptr);
 }
 
-TEST_F(SongLibraryTest, MultipleSongsCanBeStored) {
+TEST_F(SongLibraryTest, WhenMultipleSongsAreAdded_ThenAllSongsAreRetrievable) {
     EXPECT_NE(library.getSong("Breeze Air"), nullptr);
     EXPECT_NE(library.getSong("Broom Game"), nullptr);
 }

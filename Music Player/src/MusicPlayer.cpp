@@ -5,44 +5,96 @@ MusicPlayer::MusicPlayer() {
     currentIndex = 0;
 }
 
-void MusicPlayer::play() {
-    if (music.openFromFile(playlist->getSongs()[currentIndex]->getFilePath())) {
+bool MusicPlayer::play() {
+
+    if (music.openFromFile(
+            playlist->getSongs()[currentIndex]->getFilePath())) {
+
         music.play();
-        std::cout << "Playlist Playing: " << playlist->getSongs()[currentIndex]->getTitle() << std::endl;
-    } else {
-        std::cout << "Error loading file! " <<std::endl;
+
+        std::cout << "Playlist Playing: "
+                  << playlist->getSongs()[currentIndex]->getTitle()
+                  << std::endl;
+
+        return true;
+    }
+
+    else {
+
+        std::cout << "Error loading file!"
+                  << std::endl;
+
+        return false;
     }
 }
 
-void MusicPlayer::pause() {
+bool MusicPlayer::pause() {
+
     if (music.getStatus() == sf::Music::Playing) {
+
         music.pause();
-        std::cout << "Playlist Paused" << std::endl;
+
+        std::cout << "Playlist Paused"
+                  << std::endl;
+
+        return true;
     }
+
     else if (music.getStatus() == sf::Music::Paused) {
+
         music.play();
-        std::cout << "Playlist Resumed" << std::endl;
+
+        std::cout << "Playlist Resumed"
+                  << std::endl;
+
+        return true;
     }
+
+    return false;
 }
 
-void MusicPlayer::stop() {
+bool MusicPlayer::stop() {
+
     music.stop();
-    std::cout << "Playlist Stopped" << std::endl;
+
+    std::cout << "Playlist Stopped"
+              << std::endl;
+
+    return true;
 }
 
-void MusicPlayer::next() {
-    if (playlist->getSongs().empty()) return;
-    currentIndex = (currentIndex + 1) % playlist->getSongs().size();
-    play();
+bool MusicPlayer::next() {
+
+    if (playlist->getSongs().empty()) {
+        return false;
+    }
+
+    currentIndex =
+        (currentIndex + 1)
+        % playlist->getSongs().size();
+
+    return play();
 }
 
-void MusicPlayer::previous() {
-    if (playlist->getSongs().empty()) return;
-    currentIndex = (currentIndex - 1 + playlist->getSongs().size()) % playlist->getSongs().size();
-    play();
+bool MusicPlayer::previous() {
+
+    if (playlist->getSongs().empty()) {
+        return false;
+    }
+
+    currentIndex =
+        (currentIndex - 1
+         + playlist->getSongs().size())
+        % playlist->getSongs().size();
+
+    return play();
 }
 
-void MusicPlayer::setPlaylist(Playlist* playlist) {
+bool MusicPlayer::setPlaylist(Playlist* playlist) {
+
     this->playlist = playlist;
+
     currentIndex = 0;
+
+    return true;
 }

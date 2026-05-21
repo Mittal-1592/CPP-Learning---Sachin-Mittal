@@ -2,22 +2,19 @@
 #include "Song.h"
 
 class SongTest : public ::testing::Test {
-protected:
-    Song song{"Believer", "/music/believer.mp3"};
+    protected:
+        Song song{"Believer", "/music/believer.mp3"};
 };
 
-TEST_F(SongTest, ConstructorInitializesTitleCorrectly) {
+TEST_F(SongTest, WhenSongIsCreated_ThenTitleAndFilePathAreInitializedCorrectly) {
     EXPECT_EQ(song.getTitle(), "Believer");
-}
-
-TEST_F(SongTest, ConstructorInitializesFilePathCorrectly) {
     EXPECT_EQ(song.getFilePath(), "/music/believer.mp3");
 }
 
-TEST_F(SongTest, TitleShouldNotBeEmpty) {
+TEST_F(SongTest, WhenSongIsCreated_ThenTitleShouldNotBeEmpty) {
     EXPECT_FALSE(song.getTitle().empty());
 }
 
-TEST_F(SongTest, FilePathShouldNotBeEmpty) {
+TEST_F(SongTest, WhenSongIsCreated_ThenFilePathShouldNotBeEmpty) {
     EXPECT_FALSE(song.getFilePath().empty());
 }

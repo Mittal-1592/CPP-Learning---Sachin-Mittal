@@ -13,8 +13,9 @@ int main() {
 
     MusicPlayer player;
     PlaylistManager manager;
+    Validations validations;
 
-    MusicPlayerController controller(&player, &manager, library);
+    MusicPlayerController controller(&player, &manager, library, validations);
 
     controller.run();
 

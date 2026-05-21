@@ -66,7 +66,6 @@ bool Validations::validatePlaylistName(const std::string& playlistName) {
     }
 
     bool onlySpaces = true;
-
     for (char ch : playlistName) {
         if (ch != ' ') {
             onlySpaces = false;

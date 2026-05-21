@@ -8,8 +8,8 @@ class SongLibrary {
     private:
         std::vector<Song*> songs;
     public:
-        void addSong(Song* song);
-        void displaySongs() const;
+        bool addSong(Song* song);
+        bool displaySongs() const;
         Song* getSong(std::string title) const;
 
         ~SongLibrary();
