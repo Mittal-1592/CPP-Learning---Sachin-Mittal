@@ -30,4 +30,4 @@ int main(){
 
 int x=6;
 const int y=x;
-constexpr int z=x;
+//constexpr int z=x;
