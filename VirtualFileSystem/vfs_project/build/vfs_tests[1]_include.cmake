@@ -1,0 +1,5 @@
+if(EXISTS "/home/sachinmittal/VirtualFileSystem/vfs_project/build/vfs_tests[1]_tests.cmake")
+  include("/home/sachinmittal/VirtualFileSystem/vfs_project/build/vfs_tests[1]_tests.cmake")
+else()
+  add_test(vfs_tests_NOT_BUILT vfs_tests_NOT_BUILT)
+endif()

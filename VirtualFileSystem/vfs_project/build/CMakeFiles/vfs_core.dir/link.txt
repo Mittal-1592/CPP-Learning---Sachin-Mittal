@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvfs_core.a CMakeFiles/vfs_core.dir/src/CommandHandler.cpp.o CMakeFiles/vfs_core.dir/src/CommandParser.cpp.o CMakeFiles/vfs_core.dir/src/Directory.cpp.o CMakeFiles/vfs_core.dir/src/File.cpp.o CMakeFiles/vfs_core.dir/src/FileSystem.cpp.o CMakeFiles/vfs_core.dir/src/FileSystemComponent.cpp.o CMakeFiles/vfs_core.dir/src/IOHandler.cpp.o
+/usr/bin/ranlib libvfs_core.a

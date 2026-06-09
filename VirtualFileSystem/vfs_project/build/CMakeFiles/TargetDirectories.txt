@@ -1,0 +1,6 @@
+/home/sachinmittal/VirtualFileSystem/vfs_project/build/CMakeFiles/vfs_core.dir
+/home/sachinmittal/VirtualFileSystem/vfs_project/build/CMakeFiles/vfs.dir
+/home/sachinmittal/VirtualFileSystem/vfs_project/build/CMakeFiles/vfs_tests.dir
+/home/sachinmittal/VirtualFileSystem/vfs_project/build/CMakeFiles/test.dir
+/home/sachinmittal/VirtualFileSystem/vfs_project/build/CMakeFiles/edit_cache.dir
+/home/sachinmittal/VirtualFileSystem/vfs_project/build/CMakeFiles/rebuild_cache.dir
